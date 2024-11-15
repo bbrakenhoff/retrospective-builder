@@ -1,5 +1,5 @@
 import {AttendanceOption, RetrospectiveElement, RetrospectivePhase} from '../core/models/retrospective-element';
-import {NotionRetrospectiveElement, NotionTypeSelect} from '../core/interfaces/notion-retrospective-element';
+import {NotionRetrospectiveElement} from '../core/interfaces/notion-retrospective-element';
 
 export interface RetrospectiveElementStub {
   id: string;

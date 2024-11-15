@@ -1,5 +1,3 @@
-type NotionEmptyObject = Record<string, never>;
-
 export interface NotionTypeSelect {
   name: string | null;
 }

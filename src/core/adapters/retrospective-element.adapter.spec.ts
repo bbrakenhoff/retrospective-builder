@@ -3,7 +3,6 @@ import {AttendanceOption, RetrospectivePhase} from '../models/retrospective-elem
 import {TestDataFactory} from '../../testing/test-data-factory';
 
 describe('RetrospectiveElementAdapter', () => {
-  const testData = {};
 
   let adapter: RetrospectiveElementAdapter;
 
