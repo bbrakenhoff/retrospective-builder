@@ -1,23 +1,21 @@
+type NotionEmptyObject = Record<string, never>;
+
 export interface NotionTypeSelect {
-  name: string | null
+  name: string | null;
 }
 
 export interface NotionRetrospectiveElement {
   id: string;
   Name: {
     id: string;
-    title: {
-      context: { text: string; }
-    }
+    title: [{
+      plain_text: string
+    }]
   },
-  Theme: { select: NotionTypeSelect },
-  Link: {
-    "href": string | null;
-  },
-  "Attendance opties": {
-    multi_select: NotionTypeSelect[]
-  },
-  Phase: {
-    multi_select: NotionTypeSelect[]
+  "Attendance options": { multi_select: NotionTypeSelect[] }
+  Phase: { multi_select: NotionTypeSelect[] }
+  Link: { rich_text: [{ href: string |null}] };
+  Theme: {
+    select: NotionTypeSelect;
   }
 }

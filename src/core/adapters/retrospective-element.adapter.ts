@@ -1,10 +1,13 @@
 import {
-  AttendanceOption, ATTENDANCE_OPTIONS,
+  ATTENDANCE_OPTIONS,
+  AttendanceOption,
+  RETROSPECTIVE_PHASES,
   RetrospectiveElement,
-  RetrospectivePhase,
-  RETROSPECTIVE_PHASES
+  RetrospectivePhase
 } from '../models/retrospective-element';
+import {Injectable} from '@angular/core';
 
+@Injectable({providedIn: 'root'})
 export class RetrospectiveElementAdapter {
   public createRetrospectiveElement(name: string, attendanceOptions: string[], phases: string[], theme: string | null = null, link: string | null = null): RetrospectiveElement {
     return new RetrospectiveElement(this.validateName(name), theme, link, this.validateAttendanceOptions(attendanceOptions), this.validatePhases(phases));
@@ -60,7 +63,7 @@ export class RetrospectiveElementAdapter {
     return values as RetrospectivePhase[];
   }
 
-  private isRetrospectivePhase(value: any):value is RetrospectivePhase {
-    return RETROSPECTIVE_PHASES.includes(value)
+  private isRetrospectivePhase(value: any): value is RetrospectivePhase {
+    return RETROSPECTIVE_PHASES.includes(value);
   }
 }

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Client, LogLevel} from '@notionhq/client';
 import {from, Observable} from 'rxjs';
+import {QueryDatabaseResponse} from '@notionhq/client/build/src/api-endpoints';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class NotionService {
   public constructor() {
   }
 
-  public queryDatabase(databaseId: string): Observable<any> {
+  public queryDatabase(databaseId: string): Observable<QueryDatabaseResponse> {
     return from(this.notionClient.databases.query({database_id: databaseId}))
   }
 }
